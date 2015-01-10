@@ -1,0 +1,190 @@
+body{
+    margin: 0;
+    font:12px/180% Arial;
+    background-color: #fff;
+}
+ul,ol,li,dt,dd,p{
+    margin: 0;
+    padding: 0;
+}
+.clearfix{
+    overflow: hidden;
+    clear: both;
+}
+.clearfix:after{
+    content: '';
+    visibility: hidden;
+    height: 0;
+}
+img{
+    border:0;
+    vertical-align: bottom;
+}
+/*最外层图片容器*/
+.ophotoBox{
+    border:1px solid #9e9e9e;
+    width: 400px;
+    max-height: 400px;
+    margin: 100px 100px 50px 100px;
+    position: relative;
+    float: left;
+    height: 400px;
+    text-align: center;
+}
+.photoBox{
+    position: relative;
+    vertical-align: middle;
+    display: inline-block;
+}
+/*裁减边框样式*/
+.boxside{
+    background:#fff url(../images/border.gif) repeat;
+    position: absolute;
+    opacity: 0.5;
+}
+.up-side{
+    top: 0;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    z-index: 3;
+}
+.right-side{
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 1px;
+    z-index: 3;
+}
+.down-side{
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    z-index: 3;
+}
+.left-side{
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 1px;
+    z-index: 3;
+}
+/*原始图片样式*/
+.originImg{
+    max-width: 100%;
+    max-height: 100%;
+}
+.makeMiddle{
+    display:inline-block; 
+    vertical-align:middle; 
+    height:100%;
+}
+/*原始图片的透明度*/
+.opacity{
+    opacity:0.5;
+    filter:alpha(opacity=50);
+}
+
+.cursorStyle{
+    cursor:crosshair;
+}
+/*用于配合裁减效果的图片样式*/
+.cropImg,.previewImg{
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+/*裁减层样式*/
+#cropBar{
+    position: absolute;
+    z-index: 1;
+    overflow: hidden;
+    cursor: move;
+    display: none;
+}
+/*触点层样式*/
+#dragBar{
+    position: absolute;
+    display: none;
+}
+.handlePoint{
+    width: 6px;
+    height: 6px;
+    overflow: hidden;
+    background-color: #ffffff;
+    position: absolute;
+    z-index: 2;
+    opacity: 0.8;
+}
+.nw{
+    left: -3px;
+    top: -2px;
+    cursor: nw-resize;
+}
+.n{
+    left: 50%;
+    margin-left: -3px;
+    top: -2px;
+    cursor: n-resize;
+    z-index: 5;
+}
+.ne{
+    right: -3px;
+    top: -2px;
+    cursor: ne-resize;
+}
+.e{
+    right: -3px;
+    top: 50%;
+    margin-top: -3px;
+    cursor: e-resize;
+}
+.se{
+    right: -3px;
+    bottom: -2px;
+    cursor: se-resize;
+}
+.s{
+    left: 50%;
+    margin-left: -3px;
+    bottom: -2px;
+    cursor: s-resize;
+}
+.sw{
+    left: -3px;
+    bottom: -2px;
+    cursor: sw-resize;
+}
+.w{
+    left: -3px;
+    top: 50%;
+    margin-top: -3px;
+    cursor: w-resize;
+}
+/*预览层*/
+#preview{
+    width: 150px;
+    height: 150px;
+    border:1px solid #9e9e9e;
+    float: left;
+    display: none;
+    margin: 100px 0 0 0;
+    position: relative;
+    overflow: hidden;
+}
+/*保存按钮*/
+.saveBtn{
+    float: left;
+    margin: 230px 0 0 10px;
+}
+/*当前头像*/
+.curHead {
+    position: absolute;
+    left: 820px;
+    top: 100px;
+}
+.curHead img{
+    border:1px solid #9e9e9e;
+}
+

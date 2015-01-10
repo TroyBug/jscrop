@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <div class="curHead">
+        当前头像：
+        <img width="150" height="150" src="/images/crop.jpg" alt=""/>
+    </div>
+    <!--最外层图片容器-->
+    <div class="ophotoBox">
+        <i class="makeMiddle"></i><div id="photoBox" class="photoBox">
+            <!--裁减层-->
+            <div id="cropBar">
+                <!--描边-->
+                <div class="boxside up-side"></div>
+                <div class="boxside right-side"></div>
+                <div class="boxside down-side"></div>
+                <div class="boxside left-side"></div>
+                <!--用于配合裁减层显示效果的原始图片拷贝-->
+                <img id="cropImg" class="cropImg" src="/images/empty.jpg" alt=""/>
+            </div>
+            <!--触点层-->
+            <div id="dragBar">
+                <div id="point-nw" class="handlePoint nw"></div>
+                <div id="point-n" class="handlePoint n"></div>
+                <div id="point-ne" class="handlePoint ne"></div>
+                <div id="point-e" class="handlePoint e"></div>
+                <div id="point-se" class="handlePoint se"></div>
+                <div id="point-s" class="handlePoint s"></div>
+                <div id="point-sw" class="handlePoint sw"></div>
+                <div id="point-w" class="handlePoint w"></div>
+            </div>
+
+            <!--原始图片-->
+            <img id="originImg" class="originImg cursorStyle" src="/images/empty.jpg" alt=""/>
+        </div>
+    </div>
+
+    <!--预览层-->
+    <div id="preview">
+        <i class="makeMiddle"></i><img id="previewImg" class="cropImg" src="/images/empty.jpg" alt=""/>
+    </div>
+    <div class="saveBtn">
+        <form method="post" action="/save" target="_self">
+            <input id="cx" name="x" type="hidden" value="0"/>
+            <input id="cy" name="y" type="hidden" value="0"/>
+            <input id="cw" name="w" type="hidden" value="0"/>
+            <input id="ch" name="h" type="hidden" value="0"/>
+            <input id="preImgSize" name="preSize" type="hidden" value="0,0"/>
+            <input type="submit" value="保存"/>
+        </form>
+    </div>
+    <div class="clearfix" style="margin-left: 100px; position: relative; margin-top: -50px;">
+    	<iframe src="/upload" width="200" height="30" scrolling="no" frameborder="0"></iframe>
+    </div>
+    <script src="/javascripts/handle.js"></script>
+    <script src="/javascripts/jscrop.js"></script>
+  </body>
+</html>
