@@ -3,7 +3,7 @@ var router = express.Router();
 var fs = require('fs');
 var http = require('http');
 var fileupload = require('fileupload');
-//确保系统中安装了graphismagick
+//确保系统中安装了graphicsmagick
 var gm = require('gm');
 //var im = require('imagemagick');
 //var imageMagick = gm.subClass({ imageMagick: true });
