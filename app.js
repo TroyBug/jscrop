@@ -4,6 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+//上传图片模块
 var multer = require('multer');
 
 var routes = require('./routes/index');
@@ -21,6 +22,7 @@ app.use(bodyParser.json() );
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+//指定上传文件路径
 app.use(multer({ dest: './public/images'}));
 
 app.use('/', routes);
