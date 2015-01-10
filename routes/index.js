@@ -3,10 +3,11 @@ var router = express.Router();
 var fs = require('fs');
 var http = require('http');
 var fileupload = require('fileupload');
+//确保系统中安装了graphismagick
 var gm = require('gm');
 //var im = require('imagemagick');
 //var imageMagick = gm.subClass({ imageMagick: true });
-
+//保存上传图片路径
 var globalPath = '';
 
 /* GET home page. */
@@ -31,9 +32,10 @@ router.post('/upload',function(req,res) {
 });
 
 router.post('/save',function(req,res) {
+    //预览图left、top
     var x = req.body.x,
         y = req.body.y,
-        preImgSize = req.body.preSize.split(',');
+        preImgSize = req.body.preSize.split(',');   //预览图当前宽高
 
 
     gm('public'+globalPath).resize(preImgSize[0],preImgSize[1]).crop(150,150,x,y).write('public/images/crop.jpg',function(err) {
