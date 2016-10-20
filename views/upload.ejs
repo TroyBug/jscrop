@@ -38,12 +38,20 @@
             height: 100%;
         }
     </style>
+    <script>
+        function uploadFile() {
+            var upload = document.getElementById('uploadBtn');
+            //Make sure choose a file
+            if(upload.files.length) return true;
+            return false;
+        }
+    </script>
 </head>
 <body>
 	<!-- enctype="multipart/form-data" 多功能媒体类型 图片 音乐 flash等-->
 	<!-- enctype="application/x-www-form-urlencoded" 这个是默认值 -->
 	<!-- enctype="text/plain" 这个是邮件专用 -->
-	<form action="/upload" enctype="multipart/form-data" method="post">
+	<form action="/upload" onsubmit="return uploadFile()" enctype="multipart/form-data" method="post">
         <div class="uploadBox">
             <a class="upload" href="javascript:void(0)">
             	选择图片
