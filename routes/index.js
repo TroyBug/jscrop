@@ -7,7 +7,7 @@ var fileupload = require('fileupload');
 //they are stand-alone programs,not a npm module
 //download link:http://www.graphicsmagick.org/
 //http://www.imagemagick.org/
-//maybe need to restart after install if you work in windows. 
+//maybe need to restart after install if you work on windows. 
 var gm = require('gm');
 
 //use multer
